@@ -1,0 +1,4 @@
+node_modules/
+test/
+rules.md
+.nyc_output/
