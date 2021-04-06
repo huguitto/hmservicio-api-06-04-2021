@@ -1,25 +1,23 @@
 const express = require("express");
 const router = express.Router();
-const courseController = require("../controllers/courseController");
-const articleController = require("../controllers/articleController");
+const ofertaController = require("../controllers/ofertaController");
+const articuloController = require("../controllers/articulosController");
 
 module.exports = function () {
   router.get(
     "/api/search/:search",
-    courseController.findCoursesBySearchInController
+    ofertaController.findOfertasBySearchInController
   );
 
-  router.get("/api/articles", articleController.listAllArticlesInController);
-  router.get("/api/article/:id", articleController.listArticleById);
+  router.get("/api/all/ofertas", ofertaController.findAllOfertas);
 
-  router.post(
-    "/api/new-course",
-    courseController.saveNewCourseInDatabaseInController
-  );
+  router.post("/api/publicar", articuloController.saveArticleInController);
 
-  router.post(
-    "/api/new-article",
-    articleController.saveArticleOnDatabasaInController
+  router.get("/api/articulos", articuloController.findAllArticlesInController);
+
+  router.get(
+    "/api/articulo/:id",
+    articuloController.findArticleByIdInController
   );
 
   return router;

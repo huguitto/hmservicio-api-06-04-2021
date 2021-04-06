@@ -2,9 +2,12 @@ const mongoose = require("mongoose");
 
 //Schema define la estrucutra de la base de datos
 
-const cursosSchema = mongoose.Schema(
+const ofertaSchema = mongoose.Schema(
   {
-    name: {
+    titulo: {
+      type: String,
+    },
+    fecha: {
       type: String,
     },
     description: {
@@ -13,13 +16,16 @@ const cursosSchema = mongoose.Schema(
     precio: {
       type: String,
     },
-    tags: {
+    localidad: {
       type: String,
     },
-    category: {
+    categoria: {
       type: String,
     },
-    image_url: {
+    anunciante: {
+      type: String,
+    },
+    telefono: {
       type: String,
     },
     url: {
@@ -29,4 +35,4 @@ const cursosSchema = mongoose.Schema(
   { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
 );
 
-module.exports = mongoose.model("cursos", cursosSchema);
+module.exports = mongoose.model("ofertas", ofertaSchema);

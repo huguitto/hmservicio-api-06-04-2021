@@ -1,5 +1,5 @@
 {
-  "name": "api-hmcursos-2021",
+  "name": "api-hmservicios-2021",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -23,7 +23,7 @@
     "mocha": "^8.2.1",
     "mongoose": "^5.11.15",
     "nyc": "^15.1.0",
-    "sanitize-html": "^2.3.2",
+    "sanitize-html": "^2.3.3",
     "sinon": "^9.2.4"
   },
   "devDependencies": {

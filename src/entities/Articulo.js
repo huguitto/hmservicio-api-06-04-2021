@@ -22,5 +22,5 @@ const articuloSchema = new Schema(
   },
   { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
 );
-//aquí que a gente entra na colection
+
 module.exports = mongoose.model("articulos", articuloSchema);

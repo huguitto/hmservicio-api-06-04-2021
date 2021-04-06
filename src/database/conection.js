@@ -4,7 +4,7 @@ class Conection {
     mongoose.Promise = global.Promise;
     try {
       mongoose.connect(
-        "mongodb+srv://root:root@cluster0-t4baf.mongodb.net/hmcursos",
+        "mongodb+srv://root:root@cluster0-t4baf.mongodb.net/hmservicios",
         {
           useNewUrlParser: true,
           useUnifiedTopology: true,
