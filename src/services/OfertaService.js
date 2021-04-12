@@ -1,15 +1,11 @@
 const OfertaRepository = require("../repository/OfertaRepository");
-const SearchRepository = require("../repository/SearchRepository");
 
 class OfertaService {
   constructor() {
     this.ofertaRepository = new OfertaRepository();
-    this.searchRepository = new SearchRepository();
   }
 
   async findOfertasBySearch(search) {
-    //save search on database
-    await this.searchRepository.saveSearch(search);
     // clean search
     const cleanSearch = search.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
