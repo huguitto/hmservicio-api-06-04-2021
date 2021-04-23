@@ -6,11 +6,12 @@ class OfertaService {
   }
 
   async findOfertasBySearch(search) {
+    //search = palabra-palabra-palabra
     // clean search
     const cleanSearch = search.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
     //split if are there are two words
-    const searchWords = cleanSearch.split(" ");
+    const searchWords = cleanSearch.split("-");
 
     const ofertas = await this.ofertaRepository.findBySearch(searchWords);
 

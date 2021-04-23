@@ -28,6 +28,9 @@ const ofertaSchema = mongoose.Schema(
     telefono: {
       type: String,
     },
+    tags: {
+      type: String,
+    },
     url: {
       type: String,
     },

@@ -1,16 +1,16 @@
 const Oferta = require("../entities/Oferta");
 
 class OfertaRepository {
-  async findBySearch(search) {
+  async findBySearch(searchWords) {
+    searchWords = searchWords.map((word) => ({
+      $regex: new RegExp(word, "i"),
+    }));
+    searchWords = searchWords.map((item) => {
+      return item["$regex"];
+    });
+
     const ofertasFounded = await Oferta.find({
-      $or: [
-        { titulo: { $regex: search[0], $options: "i" } },
-        { description: { $regex: search[0], $options: "i" } },
-        { localidad: { $regex: search[0], $options: "i" } },
-        { categoria: { $regex: search[0], $options: "i" } },
-        { anunciante: { $regex: search[0], $options: "i" } },
-        { url: { $regex: search[0], $options: "i" } },
-      ],
+      tags: { $all: searchWords },
     });
 
     return ofertasFounded;
