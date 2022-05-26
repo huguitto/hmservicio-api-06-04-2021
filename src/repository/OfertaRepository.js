@@ -11,13 +11,15 @@ class OfertaRepository {
 
     const ofertasFounded = await Oferta.find({
       tags: { $all: searchWords },
-    });
+    })
+      .sort({ _id: -1 })
+      .limit(500);
 
     return ofertasFounded;
   }
 
   async allOfertas() {
-    const ofertas = await Oferta.find({});
+    const ofertas = await Oferta.find({}).sort({ _id: -1 }).limit(500);
     return ofertas;
   }
 }
